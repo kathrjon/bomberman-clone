@@ -1,0 +1,1104 @@
+fileFormatVersion: 2
+guid: 23cd6c2effa933048badd0cc796afc6f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7518788157176611578
+    second: bombsandexplosions_0
+  - first:
+      213: 3525106128877043473
+    second: bombsandexplosions_1
+  - first:
+      213: -953457563483496354
+    second: bombsandexplosions_2
+  - first:
+      213: -6252982212661044418
+    second: bombsandexplosions_3
+  - first:
+      213: -2953779282623483628
+    second: bombsandexplosions_4
+  - first:
+      213: 1734397245009155590
+    second: bombsandexplosions_5
+  - first:
+      213: 9212098736910002823
+    second: bombsandexplosions_6
+  - first:
+      213: -4469715563833636511
+    second: bombsandexplosions_7
+  - first:
+      213: 3320669382075878869
+    second: bombsandexplosions_8
+  - first:
+      213: 6716531101570649467
+    second: bombsandexplosions_9
+  - first:
+      213: -7054398731084447806
+    second: bombsandexplosions_10
+  - first:
+      213: -3712269344631655768
+    second: bombsandexplosions_11
+  - first:
+      213: 7127742418484660072
+    second: bombsandexplosions_12
+  - first:
+      213: 4049445234753284515
+    second: bombsandexplosions_13
+  - first:
+      213: -7324278901953038354
+    second: bombsandexplosions_14
+  - first:
+      213: -8457877152118485355
+    second: bombsandexplosions_15
+  - first:
+      213: 5085178384089899102
+    second: bombsandexplosions_16
+  - first:
+      213: -6263033647081246657
+    second: bombsandexplosions_17
+  - first:
+      213: -3915320674848585791
+    second: bombsandexplosions_18
+  - first:
+      213: 5617904726147772806
+    second: bombsandexplosions_19
+  - first:
+      213: 7345862704601260057
+    second: bombsandexplosions_20
+  - first:
+      213: 3920456568155298039
+    second: bombsandexplosions_21
+  - first:
+      213: 8782319862492825610
+    second: bombsandexplosions_22
+  - first:
+      213: 106557759441079105
+    second: bombsandexplosions_23
+  - first:
+      213: -4503024566043593425
+    second: bombsandexplosions_24
+  - first:
+      213: 220776898224556427
+    second: bombsandexplosions_25
+  - first:
+      213: -3595572453070567342
+    second: bombsandexplosions_26
+  - first:
+      213: -262533012450872567
+    second: bombsandexplosions_27
+  - first:
+      213: 4077292309661758918
+    second: bombsandexplosions_28
+  - first:
+      213: -7663066928002943181
+    second: bombsandexplosions_29
+  - first:
+      213: -2420997223872903878
+    second: bombsandexplosions_30
+  - first:
+      213: -182233971273177774
+    second: bombsandexplosions_31
+  - first:
+      213: -2599357902477064915
+    second: bombsandexplosions_32
+  - first:
+      213: -173189685562882642
+    second: bombsandexplosions_33
+  - first:
+      213: -473514088658761876
+    second: bombsandexplosions_34
+  - first:
+      213: 296371098672208384
+    second: bombsandexplosions_35
+  - first:
+      213: 6387176294893101006
+    second: bombsandexplosions_36
+  - first:
+      213: 2621834340840961479
+    second: bombsandexplosions_37
+  - first:
+      213: 3777087751272556404
+    second: bombsandexplosions_38
+  - first:
+      213: 3363680593576354921
+    second: bombsandexplosions_39
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bombsandexplosions_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60df21ed106e7a790800000000000000
+      internalID: -7518788157176611578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11fb44fe851bbe030800000000000000
+      internalID: 3525106128877043473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50282cc563a4c2f0800000000000000
+      internalID: -953457563483496354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b908baec1f839a0800000000000000
+      internalID: -6252982212661044418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_4
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411b15a64611207d0800000000000000
+      internalID: -2953779282623483628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_5
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606df28ea11d11810800000000000000
+      internalID: 1734397245009155590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a68515ef2f7df70800000000000000
+      internalID: 9212098736910002823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_7
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 84
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16949a2506168f1c0800000000000000
+      internalID: -4469715563833636511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd06279533651e20800000000000000
+      internalID: 3320669382075878869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_9
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d4bff7379e53d50800000000000000
+      internalID: 6716531101570649467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_10
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfbeb9dabdb91e90800000000000000
+      internalID: -7054398731084447806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_11
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a278a213be5b7cc0800000000000000
+      internalID: -3712269344631655768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_12
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867034817f3dae260800000000000000
+      internalID: 7127742418484660072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_13
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a92ed27cf4823830800000000000000
+      internalID: 4049445234753284515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_14
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee77335f42fea5a90800000000000000
+      internalID: -7324278901953038354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_15
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 67
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ec51aba859f9a80800000000000000
+      internalID: -8457877152118485355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_16
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e506c234cce229640800000000000000
+      internalID: 5085178384089899102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_17
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f303769b41c3519a0800000000000000
+      internalID: -6263033647081246657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_18
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c748e9279cf9a9c0800000000000000
+      internalID: -3915320674848585791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_19
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681b600659ec6fd40800000000000000
+      internalID: 5617904726147772806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_20
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9106c84b53fb1f560800000000000000
+      internalID: 7345862704601260057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_21
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f85e3e2a72486630800000000000000
+      internalID: 3920456568155298039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_22
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a080ebb526111e970800000000000000
+      internalID: 8782319862492825610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_23
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 50
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b0c87b7b19a7100800000000000000
+      internalID: 106557759441079105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_24
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f253d16e30b0281c0800000000000000
+      internalID: -4503024566043593425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_25
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8989415b6b501300800000000000000
+      internalID: 220776898224556427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_26
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2588c8277e5f91ec0800000000000000
+      internalID: -3595572453070567342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_27
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9037d0bbd9b4b5cf0800000000000000
+      internalID: -262533012450872567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_28
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c532d2d0c3759830800000000000000
+      internalID: 4077292309661758918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_29
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337375aca3157a590800000000000000
+      internalID: -7663066928002943181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_30
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3549d41ad3e66ed0800000000000000
+      internalID: -2420997223872903878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_31
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 33
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255e04c2b23987df0800000000000000
+      internalID: -182233971273177774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_32
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2500ca72c93debd0800000000000000
+      internalID: -2599357902477064915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_33
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5434906e4b89df0800000000000000
+      internalID: -173189685562882642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_34
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c670a55f17dbd69f0800000000000000
+      internalID: -473514088658761876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_35
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a9c0aa1fbec1400800000000000000
+      internalID: 296371098672208384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_36
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf16eedffec3a850800000000000000
+      internalID: 6387176294893101006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_37
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5feb12170a26420800000000000000
+      internalID: 2621834340840961479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_38
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47764144c49ea6430800000000000000
+      internalID: 3777087751272556404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bombsandexplosions_39
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9646ef5ada13eae20800000000000000
+      internalID: 3363680593576354921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

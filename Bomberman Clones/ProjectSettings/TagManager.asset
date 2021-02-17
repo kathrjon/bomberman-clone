@@ -6,6 +6,8 @@ TagManager:
   tags:
   - breakable
   - barrierwall
+  - explosion
+  - bomb
   layers:
   - Default
   - TransparentFX

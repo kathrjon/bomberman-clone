@@ -12,6 +12,7 @@ public class DestructableTiles : MonoBehaviour{
 
     private void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("explosion")){
+            Debug.Log(collision.gameObject.tag);
             Vector3 hitPosition = Vector3.zero;
             foreach(ContactPoint2D hit in collision.contacts)
             {
