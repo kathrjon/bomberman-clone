@@ -10,16 +10,12 @@ public class DestructableTiles : MonoBehaviour{
         destructableTilemap = GetComponent<Tilemap>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("explosion")){
-            Debug.Log(collision.gameObject.tag);
-            Vector3 hitPosition = Vector3.zero;
-            foreach(ContactPoint2D hit in collision.contacts)
-            {
-                hitPosition.x = hit.point.x - 0.01f * hit.normal.x;
-                hitPosition.y = hit.point.y - 0.01f * hit.normal.y;
-                destructableTilemap.SetTile(destructableTilemap.WorldToCell(hitPosition), null);
-            }
+    private void OnTriggerEnter2D(Collider2D collider){
+        if (collider.gameObject.CompareTag("explosion"))
+        {
+            Debug.Log(collider.gameObject.tag);
+            Vector3 hitPosition = collider.gameObject.transform.position;
+            destructableTilemap.SetTile(destructableTilemap.WorldToCell(hitPosition), null);
         }
     }
 }
