@@ -32,6 +32,12 @@ public class playercontroller : MonoBehaviour
 
     void placeBomb(){
         Rigidbody2D clone;
-        clone = Instantiate(bomb, rb.position, transform.rotation);
+ //       Vector3Int tilePosition = new Vector3Int((int)rb.position.x, (int)rb.position.y, 0);
+ //       Tile currentTile = (Tile)bg.GetTile(tilePosition);
+ //       Vector2 tileCenter = bg.cellBounds.center;
+        Vector3Int cellPosition = bg.WorldToCell(transform.position);
+        Vector3 cellCenter = bg.GetCellCenterWorld(cellPosition);
+ //       transform.position = bg.GetCellCenterWorld(cellPosition);
+        clone = Instantiate(bomb, cellCenter, transform.rotation);
     }
 }
