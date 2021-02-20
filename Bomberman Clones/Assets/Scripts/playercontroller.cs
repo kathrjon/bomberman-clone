@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class playercontroller : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class playercontroller : MonoBehaviour
     Vector2 movement;
     float walkSpeed = 2.0f;
     [SerializeField] public Rigidbody2D bomb;
+    [SerializeField] public Tilemap bg;
 
 
     void Awake()
