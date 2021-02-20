@@ -7,6 +7,7 @@ public class playercontroller : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector2 movement;
+    Vector3 startPosition;
     float walkSpeed = 2.0f;
     [SerializeField] public Rigidbody2D bomb;
     [SerializeField] public Tilemap bg;
@@ -14,30 +15,64 @@ public class playercontroller : MonoBehaviour
 
     void Awake()
     {
+        startPosition = getCellCenter(transform.position, bg);
+        this.transform.position = startPosition;
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update(){
-        movement.x = Input.GetAxisRaw("Horizontal") * walkSpeed;
-        movement.y = Input.GetAxisRaw("Vertical") * walkSpeed;
+        Vector3 cellCenter = getCellCenter(transform.position, bg);
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+        movePlayer(horizontalInput, verticalInput, cellCenter);
 
         if (Input.GetKeyDown(KeyCode.E)){
-            placeBomb();
+            placeBomb(cellCenter);
         }
     }
 
     void FixedUpdate(){
-        rb.MovePosition(rb.position + movement * walkSpeed * Time.fixedDeltaTime);
+ //       rb.MovePosition(rb.position + movement * walkSpeed * Time.fixedDeltaTime);
     }
 
-    void placeBomb(){
+    void movePlayer(float horizontalInput, float verticalInput, Vector3 cellCenter){
+        if (horizontalInput > 0){
+            moveTowardsNextCell(cellCenter.x + 1, cellCenter.y);
+        }
+        if (horizontalInput < 0){
+            moveTowardsNextCell(cellCenter.x - 1, cellCenter.y);
+        }
+
+        if (verticalInput > 0){
+            moveTowardsNextCell(cellCenter.x, cellCenter.y + 1);
+        }
+
+        if (verticalInput < 0){
+            moveTowardsNextCell(cellCenter.x, cellCenter.y - 1);
+        }
+    }
+
+    void moveTowardsNextCell(float adjacentCellX, float adjecentCellY){
+        Vector2 adjacentCell = new Vector2(adjacentCellX, adjecentCellY);
+        Vector3 adjacentCellCenter = getCellCenter(adjacentCell, bg);
+        float distance = walkSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, adjacentCellCenter, distance);
+    }
+
+    void placeBomb(Vector3 cellCenter){
         Rigidbody2D clone;
- //       Vector3Int tilePosition = new Vector3Int((int)rb.position.x, (int)rb.position.y, 0);
- //       Tile currentTile = (Tile)bg.GetTile(tilePosition);
- //       Vector2 tileCenter = bg.cellBounds.center;
-        Vector3Int cellPosition = bg.WorldToCell(transform.position);
-        Vector3 cellCenter = bg.GetCellCenterWorld(cellPosition);
- //       transform.position = bg.GetCellCenterWorld(cellPosition);
+        //       Vector3Int tilePosition = new Vector3Int((int)rb.position.x, (int)rb.position.y, 0);
+        //       Tile currentTile = (Tile)bg.GetTile(tilePosition);
+        //       Vector2 tileCenter = bg.cellBounds.center;
+        //       transform.position = bg.GetCellCenterWorld(cellPosition);+
+        Debug.Log("-placeBomb- transform.rotation" + transform.rotation);
+        Debug.Log("-placeBomb- cellCenter" + cellCenter);
         clone = Instantiate(bomb, cellCenter, transform.rotation);
+    }
+
+    static public Vector3 getCellCenter(Vector2 position, Tilemap bg)
+    {
+        Vector3Int cellPosition = bg.WorldToCell(position);
+        return bg.GetCellCenterWorld(cellPosition);
     }
 }
