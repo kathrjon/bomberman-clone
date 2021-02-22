@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using BombermanTools;
+
 
 public class playercontroller : MonoBehaviour
 {
@@ -15,13 +17,15 @@ public class playercontroller : MonoBehaviour
 
     void Awake()
     {
-        startPosition = getCellCenter(transform.position, bg);
+        // startPosition =  getCellCenter(transform.position, bg);
+        startPosition = BMTiles.GetCellCenter(transform.position, this.bg);
+        
         this.transform.position = startPosition;
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update(){
-        Vector3 cellCenter = getCellCenter(transform.position, bg);
+        Vector3 cellCenter = BMTiles.GetCellCenter(transform.position, bg);
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         movePlayer(horizontalInput, verticalInput, cellCenter);
@@ -76,7 +80,7 @@ public class playercontroller : MonoBehaviour
 
     void moveTowardsNextCell(float adjacentCellX, float adjecentCellY){
         Vector2 adjacentCell = new Vector2(adjacentCellX, adjecentCellY);
-        Vector3 adjacentCellCenter = getCellCenter(adjacentCell, bg);
+        Vector3 adjacentCellCenter = BMTiles.GetCellCenter(adjacentCell, bg);
         float distance = walkSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, adjacentCellCenter, distance);
     }
@@ -91,11 +95,5 @@ public class playercontroller : MonoBehaviour
         Debug.Log("-placeBomb- transform.rotation" + transform.rotation);
         cellCenter.z = -1;
         clone = Instantiate(bomb, cellCenter, transform.rotation);
-    }
-
-    static public Vector3 getCellCenter(Vector2 position, Tilemap bg)
-    {
-        Vector3Int cellPosition = bg.WorldToCell(position);
-        return bg.GetCellCenterWorld(cellPosition);
     }
 }
