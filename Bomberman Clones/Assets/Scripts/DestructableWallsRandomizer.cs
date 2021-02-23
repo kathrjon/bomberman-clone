@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using BombermanTools;
 
 public class DestructableWallsRandomizer : MonoBehaviour
 {
@@ -26,40 +27,27 @@ public class DestructableWallsRandomizer : MonoBehaviour
         
     }
 
-
-    private void PlaceRandomDestructableBlocks() {
-        // var bounds = this.destructable_tile_map.cellBounds;
-        // TileBase[] destructable_map_tiles = this.destructable_tile_map.GetTilesBlock(this.destructable_tile_map.cellBounds);
-        // for(int x = 0; x < bounds.x; x++) {
-        //     for(int y = 0; y < bounds.y; y++) {
-        //         if(this.destructable_tile_map.HasTile(new Vector3Int()))
-        //     }
-        // }
-
+    private void PlaceRandomDestructableBlocks() 
+    {
         // Loop through destructable walls so we know where NOT to place destructable wall
-        foreach(var pos in this.indestructable_tile_map.cellBounds.allPositionsWithin) {
-            Vector3Int tile = new Vector3Int(pos.x, pos.y, pos.z);
-            if(!this.indestructable_tile_map.HasTile(tile)) {
-                // No tiles here, place destructable wall
-                this.PlaceDestructableWall(pos.x, pos.y, pos.z);
-            } else {
-                // Debug.Log("Unbreakable tile exists, skipping");
+        foreach(Vector3Int pos in this.indestructable_tile_map.cellBounds.allPositionsWithin) 
+        {
+            if(!this.indestructable_tile_map.HasTile(pos)) 
+            {
+                // No tile here, place destructable wall
+                this.PlaceDestructableWall(pos);
             }
-            // Debug.Log("=====================================");
         }
-
     }
 
-    private void PlaceDestructableWall(int x, int y, int z) {
-
-        // var fl = Random.Range(0f, 1f);
-        // Debug.Log(fl);
-        // Debug.Assert((fl > this.chance_of_spawning_wall));
-
+    private void PlaceDestructableWall(Vector3Int tile_position) 
+    {
+        // Do nothing if tile spawn chance is greater than class property chance_of_spawning_wall
+        // or if number_of_destructable walls has been reached. 
         if(Random.Range(0f, 1f) > this.chance_of_spawning_wall) return;
         if(this.number_of_destructable_walls-- <= 0) return;
-        this.destructable_tile_map.SetTile(new Vector3Int(x, y, z), this.tile);
-        Debug.Log("Placing tile at " + x + ", " + y);
+
+        BMTiles.SetTile(tile_position, this.destructable_tile_map, this.tile);        
     }
 
 }
