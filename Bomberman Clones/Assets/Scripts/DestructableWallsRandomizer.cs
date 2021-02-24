@@ -9,19 +9,24 @@ using BombermanTools;
 public class DestructableWallsRandomizer : MonoBehaviour
 {
 
-    [SerializeField] Tile tile;
+    [SerializeField] Tile destructable_wall_tile;
+    [SerializeField] Tile exit_tile;
     [SerializeField] Tilemap destructable_tile_map;
     [SerializeField] Tilemap indestructable_tile_map;
+    [SerializeField] Tilemap interactable_tile_map;
     [SerializeField] GameObject player;
 
-    public int number_of_destructable_walls = 40;
+    public int number_of_destructable_walls = 10;
     public float chance_of_spawning_wall = 0.25f;
     public Vector3Int bm_starting_position;
+
+    private List<Vector3Int> destructable_block_positions = new List<Vector3Int>();
 
     void Start()
     {   
         this.FindBombermanSpawnPoint();
         this.PlaceRandomDestructableBlocks();
+        this.PlaceExit();
     }
 
     // Update is called once per frame
@@ -51,12 +56,22 @@ public class DestructableWallsRandomizer : MonoBehaviour
         if(this.number_of_destructable_walls-- <= 0) return;
         if(tile_position.x == this.bm_starting_position.x && tile_position.y == this.bm_starting_position.y) return;
 
-        BMTiles.SetTile(tile_position, this.destructable_tile_map, this.tile);        
+        BMTiles.SetTile(tile_position, this.destructable_tile_map, this.destructable_wall_tile);
+        this.destructable_block_positions.Add(tile_position);
     }
 
     private void FindBombermanSpawnPoint()
     {
         this.bm_starting_position = this.destructable_tile_map.WorldToCell(this.player.transform.position);
+    }
+
+    private void PlaceExit()
+    {
+        // Exit exists behind breakable wall
+        Vector3Int exit_position = this.destructable_block_positions.GetRange(Random.Range(0, this.destructable_block_positions.Count - 1), 1)[0];
+        Debug.Log("Exit position is at");
+        Debug.Log(exit_position);
+        BMTiles.SetTile(exit_position, this.interactable_tile_map, this.exit_tile);
     }
 
 }
