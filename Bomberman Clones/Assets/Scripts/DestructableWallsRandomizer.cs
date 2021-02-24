@@ -68,9 +68,9 @@ public class DestructableWallsRandomizer : MonoBehaviour
     private void PlaceExit()
     {
         // Exit exists behind breakable wall
+
+        // Find random wall to place exit behind
         Vector3Int exit_position = this.destructable_block_positions.GetRange(Random.Range(0, this.destructable_block_positions.Count - 1), 1)[0];
-        Debug.Log("Exit position is at");
-        Debug.Log(exit_position);
         BMTiles.SetTile(exit_position, this.interactable_tile_map, this.exit_tile);
     }
 
