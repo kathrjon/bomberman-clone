@@ -479,6 +479,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 714958576}
   offset: {x: 0, y: 0, z: 0}
+  smoothSpeed: 1
+  leftLimit: -1.5
+  rightLimit: 4.5
+  bottomLimit: -2
+  topLimit: 3
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
