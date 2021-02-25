@@ -90,7 +90,7 @@ RectTransform:
   m_GameObject: {fileID: 5827665888429000634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5}
-  m_LocalScale: {x: 0.6953245, y: 0.53633016, z: 1}
+  m_LocalScale: {x: 0.5688623, y: 0.475993, z: 1}
   m_Children:
   - {fileID: 5827665887832785625}
   m_Father: {fileID: 0}
@@ -186,5 +186,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526605b958c10c9418936e3c961efb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPosition: {x: 0, y: 0, z: 0}
+  destinationCellCenter: {x: 0, y: 0, z: 0}
+  cellCenter: {x: 0, y: 0, z: 0}
   bomb: {fileID: 6002777961245302874, guid: e988a3b37c6591e4eb9895db54cff4c3, type: 3}
   bg: {fileID: 0}
+  barrierLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  horizontalInput: 0
+  verticalInput: 0
