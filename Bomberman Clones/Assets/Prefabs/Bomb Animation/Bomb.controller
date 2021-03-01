@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e592b69d3798f84193df499ee037156, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionCenter: {fileID: 6532413489596801591, guid: 56f8b08da424ca649b71ed27e4489708,
+  explosionCenter: {fileID: 5516471408990153669, guid: a914aaf4af0aa484a943715f85bc583e,
     type: 3}
   explosionVerticalMiddle: {fileID: -5020770978225939235, guid: 761f5c902773ea548926e339754aaeea,
     type: 3}
@@ -167,5 +167,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   bg: {fileID: 4217496786897930581, guid: 2660cd9ec499a5844981c0fa4166bd90, type: 3}
-  placeExplosionsDownArray: []
-  explosionPower: 5
+  explosionPower: 4
