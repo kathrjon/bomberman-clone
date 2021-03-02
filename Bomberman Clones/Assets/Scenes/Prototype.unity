@@ -256,7 +256,7 @@ GameObject:
   - component: {fileID: 271568641}
   - component: {fileID: 271568642}
   - component: {fileID: 271568643}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Tilemap_BreakableWalls
   m_TagString: breakable
   m_Icon: {fileID: 0}
@@ -2364,7 +2364,7 @@ PrefabInstance:
     - target: {fileID: 5827665888429000639, guid: e86cdaf46aebe9247aa3c6e73aa7e620,
         type: 3}
       propertyPath: barrierLayer.m_Bits
-      value: 8
+      value: 72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e86cdaf46aebe9247aa3c6e73aa7e620, type: 3}

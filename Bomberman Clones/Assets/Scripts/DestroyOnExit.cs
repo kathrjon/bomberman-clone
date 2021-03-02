@@ -19,32 +19,7 @@ public class DestroyOnExit : StateMachineBehaviour
         findExplosionPath(animator.gameObject.transform);
         Vector3 flameCenter = new Vector3(animator.gameObject.transform.position.x, animator.gameObject.transform.position.y, animator.gameObject.transform.position.z);
         Destroy(animator.gameObject, stateInfo.length);
-        Instantiate(explosionCenter, flameCenter, Quaternion.identity);
-        for (var i = 0; i < flameList.Count; i++){
-            if (flameList[i].isEnd)
-            {
-                Rigidbody2D flame = Instantiate(explosionVerticalEndDown, flameList[i].flameLocation, Quaternion.identity);
-                if (flameList[i].direction == Vector2.left){
-                    flame.transform.Rotate(Vector3.forward * -90);
-                } else if(flameList[i].direction == Vector2.up){
-                    flame.transform.Rotate(Vector3.forward * -180);
-                } else if(flameList[i].direction == Vector2.right){
-                    flame.transform.Rotate(Vector3.forward * -270);
-                }
-
-            } else
-            {
-                if(flameList[i].direction != Vector2.up && flameList[i].direction != Vector2.down)
-                {
-                    Rigidbody2D flame = Instantiate(explosionVerticalMiddle, flameList[i].flameLocation, Quaternion.identity);
-                    flame.transform.Rotate(Vector3.forward * -90);
-
-                } else
-                {
-                    Instantiate(explosionVerticalMiddle, flameList[i].flameLocation, Quaternion.identity);
-                }
-            }
-        }
+        instantiateExplosion(flameCenter);
     }
 
     void findExplosionPath(Transform transform){
@@ -58,6 +33,44 @@ public class DestroyOnExit : StateMachineBehaviour
         getExplosionSpriteCellCenters(hitRight, Vector2.right, transform);
         getExplosionSpriteCellCenters(hitLeft, Vector2.left, transform);
 
+    }
+
+    void instantiateExplosion(Vector3 flameCenter)
+    {
+        Instantiate(explosionCenter, flameCenter, Quaternion.identity);
+        for (var i = 0; i < flameList.Count; i++)
+        {
+            if (flameList[i].isEnd)
+            {
+                Rigidbody2D flame = Instantiate(explosionVerticalEndDown, flameList[i].flameLocation, Quaternion.identity);
+                if (flameList[i].direction == Vector2.left)
+                {
+                    flame.transform.Rotate(Vector3.forward * -90);
+                }
+                else if (flameList[i].direction == Vector2.up)
+                {
+                    flame.transform.Rotate(Vector3.forward * -180);
+                }
+                else if (flameList[i].direction == Vector2.right)
+                {
+                    flame.transform.Rotate(Vector3.forward * -270);
+                }
+
+            }
+            else
+            {
+                if (flameList[i].direction != Vector2.up && flameList[i].direction != Vector2.down)
+                {
+                    Rigidbody2D flame = Instantiate(explosionVerticalMiddle, flameList[i].flameLocation, Quaternion.identity);
+                    flame.transform.Rotate(Vector3.forward * -90);
+
+                }
+                else
+                {
+                    Instantiate(explosionVerticalMiddle, flameList[i].flameLocation, Quaternion.identity);
+                }
+            }
+        }
     }
 
     void getExplosionSpriteCellCenters(RaycastHit2D hit, Vector2 direction, Transform transform){
