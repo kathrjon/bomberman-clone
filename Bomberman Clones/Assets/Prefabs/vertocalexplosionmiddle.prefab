@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6948083797078176558}
   - component: {fileID: 6446121384338004110}
   - component: {fileID: -5020770978225939235}
+  - component: {fileID: 1822951881145050962}
   m_Layer: 0
   m_Name: vertocalexplosionmiddle
   m_TagString: Untagged
@@ -105,3 +106,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1822951881145050962
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474534530314895072}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58a4139d0dca7774c91ce71e0ad7f67b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
