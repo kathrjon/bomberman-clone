@@ -11,18 +11,17 @@ public class playercontroller : MonoBehaviour
     Rigidbody2D rb;
     public Vector3 startPosition;
     public Vector3 cellCenter;
-    public float walkSpeed = 2.0f;
-    public playerStats stats = new playerStats(1,2.0f,1);
+    public playerStats stats;
     [SerializeField] public Rigidbody2D bomb;
     [SerializeField] public Tilemap bg;
     [SerializeField] public LayerMask barrierLayer;
     private float horizontalInput = 0;
     private float verticalInput = 0;
 
-
     void Awake()
     {
         startPosition = BMTiles.GetCellCenter(transform.position, this.bg);
+        stats = new playerStats(1, 2.0f, 1);
         
         this.transform.position = startPosition;
         rb = GetComponent<Rigidbody2D>();
@@ -46,9 +45,14 @@ public class playercontroller : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
+    private void OnTriggerEnter2D(Collider2D col){
+        Debug.Log("Collider: " + col.tag);
+        if (col.tag == "FireUp")
+        {
+            stats.explosionStrength = stats.changeExplosionStrength(stats, 1);
+            Debug.Log("Fire Power Now: " + stats.explosionStrength);
+            Destroy(col.gameObject);
+        }
     }
 
     void movePlayer(float horizontalInput, float verticalInput, Vector3 cellCenter){
@@ -56,12 +60,13 @@ public class playercontroller : MonoBehaviour
         BMMovement move = new BMMovement();
             float distanceFromCenterY = rb.position.y - cellCenter.y;
             if (horizontalInput != 0 && Mathf.Abs(distanceFromCenterY) < .5f){
-                move.moveHorizontal(horizontalInput, cellCenter, walkSpeed, transform, barrierLayer, bg);
+                move.moveHorizontal(horizontalInput, cellCenter, stats.walkSpeed, transform, barrierLayer, bg);
             }
             float distanceFromCenterX = rb.position.x - cellCenter.x;
             if (verticalInput != 0 && Mathf.Abs(distanceFromCenterX) < .5f){
-                move.moveVertical(verticalInput, cellCenter, walkSpeed, transform, barrierLayer, bg);
+                move.moveVertical(verticalInput, cellCenter, stats.walkSpeed, transform, barrierLayer, bg);
             }
+
     }
 
     void placeBomb(Vector3 cellCenter){

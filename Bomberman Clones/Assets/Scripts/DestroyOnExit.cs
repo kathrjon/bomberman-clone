@@ -12,12 +12,14 @@ public class DestroyOnExit : StateMachineBehaviour
     [SerializeField] LayerMask barrierLayer;
     [SerializeField] public Tilemap bg;
     [SerializeField] List<Flame> flameList = new List<Flame>();
-    public float explosionPower = 2f;
+    public int explosionPower = 1;
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        explosionPower = GameObject.Find("Player").GetComponent<playercontroller>().stats.explosionStrength;
         findExplosionPath(animator.gameObject.transform);
         Vector3 flameCenter = new Vector3(animator.gameObject.transform.position.x, animator.gameObject.transform.position.y, animator.gameObject.transform.position.z);
+        animator.gameObject.GetComponent<Renderer>().enabled = false;
         Destroy(animator.gameObject, stateInfo.length);
         instantiateExplosion(flameCenter);
     }

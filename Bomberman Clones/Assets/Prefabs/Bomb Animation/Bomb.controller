@@ -167,4 +167,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   bg: {fileID: 4217496786897930581, guid: 2660cd9ec499a5844981c0fa4166bd90, type: 3}
-  explosionPower: 4
+  explosionPower: 1

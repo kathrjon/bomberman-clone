@@ -9,6 +9,8 @@ TagManager:
   - explosion
   - bomb
   - interactive_tilemap
+  - PowerUp
+  - FireUp
   layers:
   - Default
   - TransparentFX
