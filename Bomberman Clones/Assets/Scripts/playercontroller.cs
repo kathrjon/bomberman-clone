@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using BombermanTools;
+using GameStatsTools;
 
 
 public class playercontroller : MonoBehaviour
@@ -11,6 +12,7 @@ public class playercontroller : MonoBehaviour
     public Vector3 startPosition;
     public Vector3 cellCenter;
     public float walkSpeed = 2.0f;
+    public playerStats stats = new playerStats(1,2.0f,1);
     [SerializeField] public Rigidbody2D bomb;
     [SerializeField] public Tilemap bg;
     [SerializeField] public LayerMask barrierLayer;
@@ -42,6 +44,11 @@ public class playercontroller : MonoBehaviour
         {
             movePlayer(horizontalInput, verticalInput, cellCenter);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 
     void movePlayer(float horizontalInput, float verticalInput, Vector3 cellCenter){
