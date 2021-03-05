@@ -35,19 +35,19 @@ namespace GameStatsTools
             set { bombCount = value; }
         }
 
-        public int changeExplosionStrength(playerStats stat, int increasedExplosion)
+        public int changeExplosionStrength(playerStats stat, int changeExplosionCount)
         {
-            return stat.explosionStrength + increasedExplosion;
+            return stat.explosionStrength + changeExplosionCount;
         }
 
-        public float changeWalkSpeed(playerStats stat, float increaseSpeed)
+        public float changeWalkSpeed(playerStats stat, float changeSpeed)
         {
-           return stat.walkSpeed + increaseSpeed;
+           return stat.walkSpeed + changeSpeed;
         }
 
-        public void changeBombCount()
+        public int changeBombCount(playerStats stat, int changeBombCount)
         {
-
+            return stat.bombCount + changeBombCount;
         }
     }
 }

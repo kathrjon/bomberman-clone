@@ -16,7 +16,7 @@ public class DestructableWallsRandomizer : MonoBehaviour
     [SerializeField] Tilemap interactable_tile_map;
     [SerializeField] GameObject player;
 
-    public int number_of_destructable_walls = 10;
+    public int number_of_destructable_walls = 20;
     public float chance_of_spawning_wall = 0.25f;
     public Vector3Int bm_starting_position;
 

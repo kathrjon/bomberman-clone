@@ -21,49 +21,119 @@ namespace BombermanTools
 
     class BMMovement
     {
-        float walkSpeed;
-        Transform entity;
-        LayerMask barrierLayer;
-        Tilemap bg;
+        private float walkSpeed;
+        private Transform entity;
+        private LayerMask barrierLayer;
+        private Tilemap bg;
+        private string tag;
 
-        public void moveHorizontal(float horizontalInput, Vector3 cellCenter, float speed, Transform transform, LayerMask layer, Tilemap tilemap)
+        private Transform Entity
         {
+            get { return entity; }
+            set { entity = value; }
+        }
+
+        public LayerMask BarrierLayer
+        {
+            get { return barrierLayer; }
+            set { barrierLayer = value; }
+        }
+
+        public Tilemap Bg
+        {
+            get { return bg; }
+            set { bg = value; }
+        }
+
+        public string Gameobjecttag
+        {
+            get { return tag; }
+            set { tag = value; }
+        }
+
+        public BMMovement(Transform entity, LayerMask barrierLayer, Tilemap bg, string tag)
+        {
+            this.entity = entity;
+            this.barrierLayer = barrierLayer;
+            this.bg = bg;
+            this.tag = tag;
+        }
+
+        public void moveHorizontal(float horizontalInput, Vector3 cellCenter, float speed)
+        {
+            Debug.Log("horizontalInput " + horizontalInput);
             walkSpeed = speed;
-            barrierLayer = layer;
-            entity = transform;
-            bg = tilemap;
+
             if (horizontalInput > 0)
             {
+                Debug.Log("horizontalInput > 0");
                 Vector2 destinationCellCoordinates = new Vector2(cellCenter.x + 1, cellCenter.y);
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, .5f, barrierLayer);
-                checkCollidersBeforeMoving(destinationCellCoordinates, hit);
+                RaycastHit2D hit = Physics2D.Raycast(entity.position, Vector2.right, .5f, barrierLayer);
+                if (tag == "Player")
+                {
+                    checkCollidersBeforeMoving(destinationCellCoordinates, hit);
+                } else
+                {
+                    Debug.Log("cellCenter: " + cellCenter);
+                    Debug.Log("DesitantionCellCoordinates: " + destinationCellCoordinates);
+                    moveTowardsNextCell(destinationCellCoordinates);
+                }
             }
+
             if (horizontalInput < 0)
             {
+                Debug.Log("horizontalInput < 0");
                 Vector2 destinationCellCoordinates = new Vector2(cellCenter.x - 1, cellCenter.y);
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, .5f, barrierLayer);
-                checkCollidersBeforeMoving(destinationCellCoordinates, hit);
+                RaycastHit2D hit = Physics2D.Raycast(entity.position, Vector2.left, .5f, barrierLayer);
+                if (tag == "Player")
+                {
+                    checkCollidersBeforeMoving(destinationCellCoordinates, hit);
+                } else
+                {
+                    Debug.Log("cellCenter: " + cellCenter);
+                    Debug.Log("DesitantionCellCoordinates: " + destinationCellCoordinates);
+                    moveTowardsNextCell(destinationCellCoordinates);
+                }
             }
         }
 
-        public void moveVertical(float verticalInput, Vector3 cellCenter, float speed, Transform transform, LayerMask layer, Tilemap tilemap)
+        public void moveVertical(float verticalInput, Vector3 cellCenter, float speed)
         {
+            Debug.Log("verticalInput " + verticalInput);
             walkSpeed = speed;
-            barrierLayer = layer;
-            entity = transform;
-            bg = tilemap;
+
             if (verticalInput > 0)
             {
+                Debug.Log("verticalInput > 0");
                 Vector2 destinationCellCoordinates = new Vector2(cellCenter.x, cellCenter.y + 1);
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, .5f, barrierLayer);
-                checkCollidersBeforeMoving(destinationCellCoordinates, hit);
+                RaycastHit2D hit = Physics2D.Raycast(entity.position, Vector2.up, .5f, barrierLayer);
+                if (tag == "Player")
+                {
+                    checkCollidersBeforeMoving(destinationCellCoordinates, hit);
+                }
+                else
+                {
+                    Debug.Log("cellCenter: " + cellCenter);
+                    Debug.Log("DesitantionCellCoordinates: " + destinationCellCoordinates);
+                    moveTowardsNextCell(destinationCellCoordinates);
+                }
             }
 
             if (verticalInput < 0)
             {
+                Debug.Log("verticalInput < 0");
                 Vector2 destinationCellCoordinates = new Vector2(cellCenter.x, cellCenter.y - 1);
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, .5f, barrierLayer);
-                checkCollidersBeforeMoving(destinationCellCoordinates, hit);
+                RaycastHit2D hit = Physics2D.Raycast(entity.position, Vector2.down, .5f, barrierLayer);
+                if (tag == "Player")
+                {
+                    checkCollidersBeforeMoving(destinationCellCoordinates, hit);
+                }
+                else
+                {
+                    Debug.Log("cellCenter: " + cellCenter);
+                    Debug.Log("DesitantionCellCoordinates: " + destinationCellCoordinates);
+                    moveTowardsNextCell(destinationCellCoordinates);
+                }
             }
         }
 
@@ -82,5 +152,5 @@ namespace BombermanTools
             entity.position = Vector3.MoveTowards(entity.position, destinationCellCenter, distance);
         }
     }
-    
+
 }

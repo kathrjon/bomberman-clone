@@ -7,10 +7,12 @@ TagManager:
   - breakable
   - barrierwall
   - explosion
-  - bomb
   - interactive_tilemap
   - PowerUp
   - FireUp
+  - BombUp
+  - SpeedUp
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Water
   - UI
   - BreakableBarrier
-  - 
+  - Player
   - 
   - 
   - 

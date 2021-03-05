@@ -21,6 +21,7 @@ public class playercontroller : MonoBehaviour
     void Awake()
     {
         startPosition = BMTiles.GetCellCenter(transform.position, this.bg);
+        startPosition.z = 1;
         stats = new playerStats(1, 2.0f, 1);
         
         this.transform.position = startPosition;
@@ -33,7 +34,10 @@ public class playercontroller : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         if (Input.GetKeyDown(KeyCode.E)){
-            placeBomb(cellCenter);
+            if(GameObject.FindGameObjectsWithTag("Bomb").Length < stats.bombCount)
+            {
+                placeBomb(cellCenter);
+            }
         }
     }
 
@@ -53,19 +57,32 @@ public class playercontroller : MonoBehaviour
             Debug.Log("Fire Power Now: " + stats.explosionStrength);
             Destroy(col.gameObject);
         }
+        if (col.tag == "BombUp")
+        {
+            stats.bombCount = stats.changeBombCount(stats, 1);
+            Debug.Log("Fire Power Now: " + stats.explosionStrength);
+            Destroy(col.gameObject);
+        }
+        if (col.tag == "SpeedUp")
+        {
+            stats.walkSpeed = stats.changeWalkSpeed(stats, 1);
+            Debug.Log("Fire Power Now: " + stats.explosionStrength);
+            Destroy(col.gameObject);
+        }
     }
 
     void movePlayer(float horizontalInput, float verticalInput, Vector3 cellCenter){
 
-        BMMovement move = new BMMovement();
-            float distanceFromCenterY = rb.position.y - cellCenter.y;
-            if (horizontalInput != 0 && Mathf.Abs(distanceFromCenterY) < .5f){
-                move.moveHorizontal(horizontalInput, cellCenter, stats.walkSpeed, transform, barrierLayer, bg);
-            }
-            float distanceFromCenterX = rb.position.x - cellCenter.x;
-            if (verticalInput != 0 && Mathf.Abs(distanceFromCenterX) < .5f){
-                move.moveVertical(verticalInput, cellCenter, stats.walkSpeed, transform, barrierLayer, bg);
-            }
+        BMMovement move = new BMMovement(transform, barrierLayer, bg, gameObject.tag);
+        float distanceFromCenterY = rb.position.y - cellCenter.y;
+        if (horizontalInput != 0 && Mathf.Abs(distanceFromCenterY) < .5f){
+            move.moveHorizontal(horizontalInput, cellCenter, stats.walkSpeed);
+        }
+
+        float distanceFromCenterX = rb.position.x - cellCenter.x;
+        if (verticalInput != 0 && Mathf.Abs(distanceFromCenterX) < .5f){
+            move.moveVertical(verticalInput, cellCenter, stats.walkSpeed);
+        }
 
     }
 

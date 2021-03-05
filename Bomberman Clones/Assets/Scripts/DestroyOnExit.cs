@@ -12,6 +12,7 @@ public class DestroyOnExit : StateMachineBehaviour
     [SerializeField] LayerMask barrierLayer;
     [SerializeField] public Tilemap bg;
     [SerializeField] List<Flame> flameList = new List<Flame>();
+    [SerializeField] List<Vector2> directionVectors = new List<Vector2> { Vector2.down, Vector2.up, Vector2.right, Vector2.left };
     public int explosionPower = 1;
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -25,16 +26,12 @@ public class DestroyOnExit : StateMachineBehaviour
     }
 
     void findExplosionPath(Transform transform){
-        RaycastHit2D hitDown = Physics2D.Raycast(transform.position, Vector2.down, explosionPower, barrierLayer);
-        RaycastHit2D hitUp = Physics2D.Raycast(transform.position, Vector2.up, explosionPower, barrierLayer);
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, explosionPower, barrierLayer);
-        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, explosionPower, barrierLayer);
-
-        getExplosionSpriteCellCenters(hitDown, Vector2.down, transform);
-        getExplosionSpriteCellCenters(hitUp, Vector2.up, transform);
-        getExplosionSpriteCellCenters(hitRight, Vector2.right, transform);
-        getExplosionSpriteCellCenters(hitLeft, Vector2.left, transform);
-
+        //make raycasts in all 4 directions and check for hits
+        for (var i = 0; i<directionVectors.Count; i++)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, directionVectors[i], explosionPower, barrierLayer);
+            getExplosionSpriteCellCenters(hit, directionVectors[i], transform);
+        }
     }
 
     void instantiateExplosion(Vector3 flameCenter)
@@ -45,6 +42,7 @@ public class DestroyOnExit : StateMachineBehaviour
             if (flameList[i].isEnd)
             {
                 Rigidbody2D flame = Instantiate(explosionVerticalEndDown, flameList[i].flameLocation, Quaternion.identity);
+                //rotate sprites based on the direction of the flame path
                 if (flameList[i].direction == Vector2.left)
                 {
                     flame.transform.Rotate(Vector3.forward * -90);
@@ -78,11 +76,14 @@ public class DestroyOnExit : StateMachineBehaviour
     void getExplosionSpriteCellCenters(RaycastHit2D hit, Vector2 direction, Transform transform){
         if (hit.collider != null){
             float hitDistanceToBarrier = hit.distance;
+            //Use i to count out the number of tiles to check for potential fire
             for (int i = 1; i <= explosionPower; i++){
                 Vector2 directionMultiplied = direction * i;
                 Vector2 positionToPlaceExplosion = new Vector2(transform.position.x + directionMultiplied.x, transform.position.y + directionMultiplied.y);
                 float distanceToExplosionCenter = Vector3.Distance(transform.position, positionToPlaceExplosion);
+                //if the distance from the potential explosion sprite is less that the distance between the raycast origin and the hit point, then add vector to list
                 if (distanceToExplosionCenter < hitDistanceToBarrier){
+                    //check if the Vector being checked is the end of the flame path
                     if(i == explosionPower)
                     {
                         flameList.Add(new Flame(positionToPlaceExplosion, true, direction));
