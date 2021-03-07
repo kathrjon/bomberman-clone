@@ -9,6 +9,8 @@ namespace BombermanTools
     class BMTiles {
         public static Vector3 GetCellCenter(Vector2 position, Tilemap tm)
         {
+            Debug.Log("GetCellCenter position" + position);
+            Debug.Log("GetCellCenter tm" + tm);
             Vector3Int cellPosition = tm.WorldToCell(position);
             return tm.GetCellCenterWorld(cellPosition);
         }
@@ -61,12 +63,10 @@ namespace BombermanTools
 
         public void moveHorizontal(float horizontalInput, Vector3 cellCenter, float speed)
         {
-            Debug.Log("horizontalInput " + horizontalInput);
             walkSpeed = speed;
 
             if (horizontalInput > 0)
             {
-                Debug.Log("horizontalInput > 0");
                 Vector2 destinationCellCoordinates = new Vector2(cellCenter.x + 1, cellCenter.y);
                 RaycastHit2D hit = Physics2D.Raycast(entity.position, Vector2.right, .5f, barrierLayer);
                 if (tag == "Player")
@@ -74,15 +74,13 @@ namespace BombermanTools
                     checkCollidersBeforeMoving(destinationCellCoordinates, hit);
                 } else
                 {
-                    Debug.Log("cellCenter: " + cellCenter);
-                    Debug.Log("DesitantionCellCoordinates: " + destinationCellCoordinates);
+                    Debug.Log("DestinationCellCoordinates: " + destinationCellCoordinates);
                     moveTowardsNextCell(destinationCellCoordinates);
                 }
             }
 
             if (horizontalInput < 0)
             {
-                Debug.Log("horizontalInput < 0");
                 Vector2 destinationCellCoordinates = new Vector2(cellCenter.x - 1, cellCenter.y);
                 RaycastHit2D hit = Physics2D.Raycast(entity.position, Vector2.left, .5f, barrierLayer);
                 if (tag == "Player")
@@ -90,8 +88,7 @@ namespace BombermanTools
                     checkCollidersBeforeMoving(destinationCellCoordinates, hit);
                 } else
                 {
-                    Debug.Log("cellCenter: " + cellCenter);
-                    Debug.Log("DesitantionCellCoordinates: " + destinationCellCoordinates);
+                    Debug.Log("DestinationCellCoordinates: " + destinationCellCoordinates);
                     moveTowardsNextCell(destinationCellCoordinates);
                 }
             }
@@ -99,12 +96,10 @@ namespace BombermanTools
 
         public void moveVertical(float verticalInput, Vector3 cellCenter, float speed)
         {
-            Debug.Log("verticalInput " + verticalInput);
             walkSpeed = speed;
 
             if (verticalInput > 0)
             {
-                Debug.Log("verticalInput > 0");
                 Vector2 destinationCellCoordinates = new Vector2(cellCenter.x, cellCenter.y + 1);
                 RaycastHit2D hit = Physics2D.Raycast(entity.position, Vector2.up, .5f, barrierLayer);
                 if (tag == "Player")
@@ -113,15 +108,13 @@ namespace BombermanTools
                 }
                 else
                 {
-                    Debug.Log("cellCenter: " + cellCenter);
-                    Debug.Log("DesitantionCellCoordinates: " + destinationCellCoordinates);
+                    Debug.Log("DestinationCellCoordinates: " + destinationCellCoordinates);
                     moveTowardsNextCell(destinationCellCoordinates);
                 }
             }
 
             if (verticalInput < 0)
             {
-                Debug.Log("verticalInput < 0");
                 Vector2 destinationCellCoordinates = new Vector2(cellCenter.x, cellCenter.y - 1);
                 RaycastHit2D hit = Physics2D.Raycast(entity.position, Vector2.down, .5f, barrierLayer);
                 if (tag == "Player")
@@ -130,8 +123,7 @@ namespace BombermanTools
                 }
                 else
                 {
-                    Debug.Log("cellCenter: " + cellCenter);
-                    Debug.Log("DesitantionCellCoordinates: " + destinationCellCoordinates);
+                    Debug.Log("DestinationCellCoordinates: " + destinationCellCoordinates);
                     moveTowardsNextCell(destinationCellCoordinates);
                 }
             }

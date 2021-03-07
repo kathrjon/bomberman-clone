@@ -13,6 +13,7 @@ TagManager:
   - BombUp
   - SpeedUp
   - Bomb
+  - Enemy
   layers:
   - Default
   - TransparentFX

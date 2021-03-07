@@ -21,7 +21,7 @@ public class DestroyOnExit : StateMachineBehaviour
         findExplosionPath(animator.gameObject.transform);
         Vector3 flameCenter = new Vector3(animator.gameObject.transform.position.x, animator.gameObject.transform.position.y, animator.gameObject.transform.position.z);
         animator.gameObject.GetComponent<Renderer>().enabled = false;
-        Destroy(animator.gameObject, stateInfo.length);
+        Destroy(animator.gameObject, stateInfo.length-2f);
         instantiateExplosion(flameCenter);
     }
 

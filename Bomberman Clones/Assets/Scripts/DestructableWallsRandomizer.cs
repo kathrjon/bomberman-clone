@@ -24,9 +24,9 @@ public class DestructableWallsRandomizer : MonoBehaviour
 
     void Start()
     {   
-        this.FindBombermanSpawnPoint();
-        this.PlaceRandomDestructableBlocks();
-        this.PlaceExit();
+        //this.FindBombermanSpawnPoint();
+        //this.PlaceRandomDestructableBlocks();
+        //this.PlaceExit();
     }
 
     // Update is called once per frame
