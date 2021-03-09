@@ -23,8 +23,6 @@ public class DenktunMovement : MonoBehaviour
         lastPos = transform.position;
         timeSinceLastReverse = timeInterval;
         cellCenter = BMTiles.GetCellCenter(transform.position, bg);
-        Debug.Log("Start cellCenter " + cellCenter);
-        Debug.Log("Start transform.position " + transform.position);
         possibleDirections = movement.findPossibleDirection();
         if (possibleDirections.Count > 0)
         {
@@ -37,8 +35,6 @@ public class DenktunMovement : MonoBehaviour
     void Update()
     {
         cellCenter = BMTiles.GetCellCenter(transform.position, bg);
-        Debug.Log("Start cellCenter " + cellCenter);
-        Debug.Log("Start transform.position " + transform.position);
         var displacement = transform.position - lastPos;
         lastPos = transform.position;
         if (displacement.magnitude == 0)

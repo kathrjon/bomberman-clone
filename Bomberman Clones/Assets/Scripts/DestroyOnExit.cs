@@ -17,7 +17,7 @@ public class DestroyOnExit : StateMachineBehaviour
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        explosionPower = GameObject.Find("Player").GetComponent<playercontroller>().stats.explosionStrength;
+        explosionPower = GameObject.Find("Player(Clone)").GetComponent<playercontroller>().stats.explosionStrength;
         findExplosionPath(animator.gameObject.transform);
         Vector3 flameCenter = new Vector3(animator.gameObject.transform.position.x, animator.gameObject.transform.position.y, animator.gameObject.transform.position.z);
         animator.gameObject.GetComponent<Renderer>().enabled = false;

@@ -8,6 +8,7 @@ public class PuropenMovement : MonoBehaviour
 {
     public Vector3 cellCenter;
     [SerializeField] EnemyMovement movement;
+    public Vector3 startPosition;
     private Tilemap bg;
     [SerializeField] private Vector2 newDirection;
     [SerializeField] private List<Vector2> possibleDirections = new List<Vector2>();
@@ -17,6 +18,10 @@ public class PuropenMovement : MonoBehaviour
         bg = GameObject.Find("TileMap_Background").gameObject.GetComponent<Tilemap>();
 
         cellCenter = BMTiles.GetCellCenter(transform.position, bg);
+        startPosition = BMTiles.GetCellCenter(transform.position, bg);
+        startPosition.z = 1;
+        this.transform.position = startPosition;
+
         possibleDirections = movement.findPossibleDirection();
         newDirection = movement.pickDirection(possibleDirections);
         movement.moveEnemy(cellCenter, newDirection, bg);
@@ -25,9 +30,6 @@ public class PuropenMovement : MonoBehaviour
     void Update()
     {
         cellCenter = BMTiles.GetCellCenter(transform.position, bg);
-        Debug.Log(cellCenter);
-        Debug.Log(newDirection);
-        Debug.Log(bg);
         movement.moveEnemy(cellCenter, newDirection, bg);
     }
 

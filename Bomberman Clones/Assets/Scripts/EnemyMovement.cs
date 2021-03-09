@@ -15,7 +15,6 @@ using BombermanTools;
 
         public List<Vector2> findPossibleDirection()
         {
-           Debug.Log("findPossibleDirection");
            for (var i = 0; i < directionVectors.Count; i++)
                 {
                     RaycastHit2D hit = Physics2D.Raycast(transform.position, directionVectors[i], 1f, barrierLayer);
@@ -26,8 +25,6 @@ using BombermanTools;
         }
 
         public void moveEnemy(Vector2 cellCenter, Vector2 newDirection, Tilemap bg){
-            Debug.Log("moveEnemy cellCenter" + cellCenter);
-            Debug.Log("moveEnemy newDirection" + newDirection);
             if (newDirection.x != 0)
                 {
                     movement.moveHorizontal(newDirection.x, cellCenter, 1f, bg);
@@ -50,7 +47,6 @@ using BombermanTools;
 
         public void checkDirection(RaycastHit2D hit, Vector2 direction)
         {
-            Debug.Log("checkDirection");
             if (hit.collider == null)
             {
                 possibleDirections.Add(direction);
@@ -59,7 +55,6 @@ using BombermanTools;
 
         public Vector2 reverseDirection(Vector2 newDirection)
         {
-            Debug.Log("reverseDirection");
             newDirection = newDirection * - 1;
 
             return newDirection;

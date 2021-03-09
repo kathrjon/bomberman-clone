@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5827665888429000639}
   - component: {fileID: 1489327030034824674}
   - component: {fileID: 3340596450167065561}
+  - component: {fileID: 6541416911175056700}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -126,15 +127,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0, z: 0}
-  destinationCellCenter: {x: 0, y: 0, z: 0}
   cellCenter: {x: 0, y: 0, z: 0}
+  stats: {fileID: 0}
   bomb: {fileID: 6002777961245302874, guid: e988a3b37c6591e4eb9895db54cff4c3, type: 3}
   bg: {fileID: 0}
   barrierLayer:
     serializedVersion: 2
-    m_Bits: 0
-  horizontalInput: 0
-  verticalInput: 0
+    m_Bits: 200
+  movement: {fileID: 6541416911175056700}
 --- !u!58 &1489327030034824674
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -167,3 +167,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.31321096}
   serializedVersion: 2
   m_Radius: 0.35787496
+--- !u!114 &6541416911175056700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5827665888429000634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a0a1feb3d18ffe46b9614e694f4172c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bg: {fileID: 0}
+  barrierLayer:
+    serializedVersion: 2
+    m_Bits: 200

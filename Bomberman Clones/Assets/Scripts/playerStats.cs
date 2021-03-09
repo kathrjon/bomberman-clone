@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameStatsTools
 {
-    public class playerStats : MonoBehaviour
+    public class playerStats
     {
         public int explosionStrength;
         public float walkSpeed;

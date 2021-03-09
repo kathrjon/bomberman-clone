@@ -4,9 +4,15 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - tile: {fileID: 11400000, guid: b10c79576baa86245847280ab1142261, type: 2}
+  - destructable_wall_tile: {instanceID: 0}
+  - exit_tile: {instanceID: 0}
   - destructable_tile_map: {instanceID: 0}
   - indestructable_tile_map: {instanceID: 0}
+  - interactable_tile_map: {instanceID: 0}
+  - player: {fileID: 5827665888429000634, guid: e86cdaf46aebe9247aa3c6e73aa7e620,
+      type: 3}
+  - puropenPrefab: {fileID: 6650855784919436518, guid: 402df14dc3c6a804e9c2d7f69eed4d85,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

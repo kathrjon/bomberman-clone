@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 6650855784919436515}
   - component: {fileID: 930922967525500871}
   - component: {fileID: 367206948583644344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Puropen
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellCenter: {x: 0, y: 0, z: 0}
   movement: {fileID: 930922967525500871}
+  startPosition: {x: 0, y: 0, z: 0}
   newDirection: {x: 0, y: 0}
   possibleDirections: []
 --- !u!58 &6650855784919436515
@@ -174,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a0a1feb3d18ffe46b9614e694f4172c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bg: {fileID: 0}
   barrierLayer:
     serializedVersion: 2
     m_Bits: 200

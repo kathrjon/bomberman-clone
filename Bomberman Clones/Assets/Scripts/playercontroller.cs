@@ -13,19 +13,24 @@ public class playercontroller : MonoBehaviour
     public Vector3 cellCenter;
     public playerStats stats;
     [SerializeField] public Rigidbody2D bomb;
-    [SerializeField] public Tilemap bg;
+    [SerializeField] private Tilemap bg;
     [SerializeField] public LayerMask barrierLayer;
     private float horizontalInput = 0;
     private float verticalInput = 0;
+    [SerializeField] Movement movement;
 
     void Awake()
     {
+        stats = new playerStats(1, 2.0f, 1);
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Start()
+    {
+        bg = GameObject.Find("TileMap_Background").gameObject.GetComponent<Tilemap>();
         startPosition = BMTiles.GetCellCenter(transform.position, this.bg);
         startPosition.z = 1;
-        stats = new playerStats(1, 2.0f, 1);
-        
         this.transform.position = startPosition;
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update(){
@@ -73,15 +78,14 @@ public class playercontroller : MonoBehaviour
 
     void movePlayer(float horizontalInput, float verticalInput, Vector3 cellCenter){
 
-        BMMovement move = new BMMovement(transform, barrierLayer, bg, gameObject.tag);
         float distanceFromCenterY = rb.position.y - cellCenter.y;
         if (horizontalInput != 0 && Mathf.Abs(distanceFromCenterY) < .5f){
-            move.moveHorizontal(horizontalInput, cellCenter, stats.walkSpeed);
+            movement.moveHorizontal(horizontalInput, cellCenter, stats.walkSpeed, bg);
         }
 
         float distanceFromCenterX = rb.position.x - cellCenter.x;
         if (verticalInput != 0 && Mathf.Abs(distanceFromCenterX) < .5f){
-            move.moveVertical(verticalInput, cellCenter, stats.walkSpeed);
+            movement.moveVertical(verticalInput, cellCenter, stats.walkSpeed, bg);
         }
 
     }
@@ -90,11 +94,5 @@ public class playercontroller : MonoBehaviour
         Rigidbody2D clone;
         cellCenter.z = -1;
         clone = Instantiate(bomb, cellCenter, transform.rotation);
-    }
-    void OnDrawGizmos()
-    {
-       Gizmos.color = Color.red;
-       Vector3 direction = transform.TransformDirection(Vector3.right) * .5f;
-       Gizmos.DrawRay(transform.position, direction);
     }
 }
