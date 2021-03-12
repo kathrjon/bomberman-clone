@@ -7,11 +7,10 @@ using BombermanTools;
 public class PuropenMovement : MonoBehaviour
 {
     public Vector3 cellCenter;
-    [SerializeField] EnemyMovement movement;
+    [SerializeField] EnemyMovement enemyMovement;
     public Vector3 startPosition;
-    private Tilemap bg;
+    [SerializeField] private Tilemap bg;
     [SerializeField] private Vector2 newDirection;
-    [SerializeField] private List<Vector2> possibleDirections = new List<Vector2>();
 
     void Start()
     {
@@ -22,22 +21,36 @@ public class PuropenMovement : MonoBehaviour
         startPosition.z = 1;
         this.transform.position = startPosition;
 
-        possibleDirections = movement.findPossibleDirection();
-        newDirection = movement.pickDirection(possibleDirections);
-        movement.moveEnemy(cellCenter, newDirection, bg);
+        newDirection = enemyMovement.changeDirection(cellCenter, bg);
     }
 
     void Update()
     {
         cellCenter = BMTiles.GetCellCenter(transform.position, bg);
-        movement.moveEnemy(cellCenter, newDirection, bg);
+        enemyMovement.moveEnemy(cellCenter, newDirection, bg);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision){
+        if (collision.collider.tag == "Enemy")
+        {
+            newDirection = enemyMovement.changeDirectionAndAvoidEnemyCollision(collision, cellCenter, bg);
+
+        }
+        else
+        {
+            newDirection = enemyMovement.changeDirection(cellCenter, bg);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        possibleDirections = movement.findPossibleDirection();
-        newDirection = movement.pickDirection(possibleDirections);
-        movement.moveEnemy(cellCenter, newDirection, bg);
+        if (collider.gameObject.CompareTag("explosion"))
+        {
+            Die();
+        }
     }
 
+    private void Die() {
+        Destroy(gameObject);
+    }
 }

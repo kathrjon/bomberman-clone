@@ -15,10 +15,15 @@ public class DestructableWallsRandomizer : MonoBehaviour
     [SerializeField] Tilemap indestructable_tile_map;
     [SerializeField] Tilemap interactable_tile_map;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject fireUpPrefab;
+    [SerializeField] GameObject speedUpPrefab;
+    [SerializeField] GameObject bombUpPrefab;
+    [SerializeField] int maxNumberOfPowerUps;
     [SerializeField] public GameObject puropenPrefab;
     [SerializeField] public int puropenCount;
     [SerializeField] public int currentPuropenCount;
     [SerializeField] float chance_of_spawning_puropen = 0.05f;
+
     private GameObject puropen;
     private GameObject[] enemies;
 
@@ -27,21 +32,19 @@ public class DestructableWallsRandomizer : MonoBehaviour
     public Vector3Int bm_starting_position;
 
     private List<Vector3Int> destructable_block_positions = new List<Vector3Int>();
+    private List<GameObject> powerUps; 
+    //{ fireUpPrefab, speedUpPrefab, bombUpPrefab };
 
     void Start()
     {
         player = GameObject.Find("Player(Clone)");
+        powerUps = new List<GameObject> { fireUpPrefab, speedUpPrefab, bombUpPrefab };
         this.FindBombermanSpawnPoint();
         this.PlaceEnemies();
         this.FindEnemySpawnPoints();
         this.PlaceRandomDestructableBlocks();
         this.PlaceExit();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        this.PlacePowerUps();
     }
 
     private void PlaceRandomDestructableBlocks() 
@@ -83,7 +86,21 @@ public class DestructableWallsRandomizer : MonoBehaviour
 
         // Find random wall to place exit behind
         Vector3Int exit_position = this.destructable_block_positions.GetRange(Random.Range(0, this.destructable_block_positions.Count - 1), 1)[0];
+//        exit_position.z = 2;
+        Debug.Log("Exit Position " + exit_position);
         BMTiles.SetTile(exit_position, this.interactable_tile_map, this.exit_tile);
+    }
+
+    private void PlacePowerUps()
+    {
+        for (var i = 0; i < maxNumberOfPowerUps; i++){
+            int index = Random.Range(0, powerUps.Count);
+            GameObject powerUp = powerUps[index];
+            Vector3 powerup_position = this.destructable_block_positions.GetRange(Random.Range(0, this.destructable_block_positions.Count - 1), 1)[0];
+            Vector3 powerup_center_position = BMTiles.GetCellCenter(powerup_position, interactable_tile_map);
+            powerup_center_position.z = 2;
+            Instantiate(powerUp, powerup_center_position, Quaternion.identity);
+        }
     }
 
     private void FindEnemySpawnPoints()
@@ -108,7 +125,7 @@ public class DestructableWallsRandomizer : MonoBehaviour
         if (tile_position.x == this.bm_starting_position.x && tile_position.y == this.bm_starting_position.y) return;
         if (currentPuropenCount <= puropenCount)
         {
-            Instantiate(puropenPrefab, tile_position, Quaternion.identity);
+            puropen = Instantiate(puropenPrefab, tile_position, Quaternion.identity);
             currentPuropenCount++;
         }
     }

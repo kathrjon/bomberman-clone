@@ -6,10 +6,9 @@ using BombermanTools;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField] private LayerMask barrierLayer;
     private float walkSpeed;
 
-    public void moveHorizontal(float horizontalInput, Vector3 cellCenter, float speed, Tilemap bg){
+    public void moveHorizontal(float horizontalInput, Vector3 cellCenter, float speed, Tilemap bg, LayerMask barrierLayer){
         walkSpeed = speed;
 
         if (horizontalInput > 0){
@@ -35,7 +34,8 @@ public class Movement : MonoBehaviour
         }
     }
 
-    public void moveVertical(float verticalInput, Vector3 cellCenter, float speed, Tilemap bg){
+    public void moveVertical(float verticalInput, Vector3 cellCenter, float speed, Tilemap bg, LayerMask barrierLayer)
+    {
         walkSpeed = speed;
 
         if (verticalInput > 0){
@@ -45,7 +45,6 @@ public class Movement : MonoBehaviour
                 checkCollidersBeforeMoving(destinationCellCoordinates, hit, bg);
             }
             else{
-                Debug.Log("DestinationCellCoordinates: " + destinationCellCoordinates);
                 moveTowardsNextCell(destinationCellCoordinates, bg);
             }
         }
@@ -57,7 +56,6 @@ public class Movement : MonoBehaviour
                 checkCollidersBeforeMoving(destinationCellCoordinates, hit, bg);
             }
             else{
-                Debug.Log("DestinationCellCoordinates: " + destinationCellCoordinates);
                 moveTowardsNextCell(destinationCellCoordinates, bg);
             }
         }

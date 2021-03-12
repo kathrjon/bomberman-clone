@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4451488421618099976}
   - component: {fileID: 4451488421618099978}
   - component: {fileID: 4451488421618099979}
-  - component: {fileID: 4451488421618099980}
   m_Layer: 0
   m_Name: Fireupsprite.PNG
   m_TagString: FireUp
@@ -71,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1933225125
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: db916a27e177e1440954de3fcfa38a64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -98,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00084123015, y: -0.00042186677}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.28466594, y: 0.28371373}
   m_EdgeRadius: 0
 --- !u!50 &4451488421618099979
 Rigidbody2D:
@@ -132,15 +131,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4451488421618099980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4451488421618100023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4d5599ba9b5c0645b171e11e63392e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

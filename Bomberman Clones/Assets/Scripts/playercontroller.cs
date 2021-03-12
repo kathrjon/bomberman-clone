@@ -29,7 +29,7 @@ public class playercontroller : MonoBehaviour
     {
         bg = GameObject.Find("TileMap_Background").gameObject.GetComponent<Tilemap>();
         startPosition = BMTiles.GetCellCenter(transform.position, this.bg);
-        startPosition.z = 1;
+        startPosition.z = 2;
         this.transform.position = startPosition;
     }
 
@@ -74,18 +74,23 @@ public class playercontroller : MonoBehaviour
             Debug.Log("Fire Power Now: " + stats.explosionStrength);
             Destroy(col.gameObject);
         }
+
+        if (col.tag == "interactive_tilemap")
+        {
+            Debug.Log("Player is on door");
+        }
     }
 
     void movePlayer(float horizontalInput, float verticalInput, Vector3 cellCenter){
 
         float distanceFromCenterY = rb.position.y - cellCenter.y;
         if (horizontalInput != 0 && Mathf.Abs(distanceFromCenterY) < .5f){
-            movement.moveHorizontal(horizontalInput, cellCenter, stats.walkSpeed, bg);
+            movement.moveHorizontal(horizontalInput, cellCenter, stats.walkSpeed, bg, barrierLayer);
         }
 
         float distanceFromCenterX = rb.position.x - cellCenter.x;
         if (verticalInput != 0 && Mathf.Abs(distanceFromCenterX) < .5f){
-            movement.moveVertical(verticalInput, cellCenter, stats.walkSpeed, bg);
+            movement.moveVertical(verticalInput, cellCenter, stats.walkSpeed, bg, barrierLayer);
         }
 
     }
