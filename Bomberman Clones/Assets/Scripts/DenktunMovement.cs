@@ -7,29 +7,24 @@ using BombermanTools;
 public class DenktunMovement : MonoBehaviour
 {
     public Vector3 cellCenter;
-    [SerializeField] EnemyMovement movement;
-    private Tilemap bg;
+    [SerializeField] EnemyMovement enemyMovement;
+    public Vector3 startPosition;
+    [SerializeField] private Tilemap bg;
     [SerializeField] float timeSinceLastReverse;
     [SerializeField] float timeInterval = 10f;
     [SerializeField] private Vector2 newDirection;
-    [SerializeField] private List<Vector2> possibleDirections = new List<Vector2>();
     Vector3 lastPos;
 
     void Start()
     {
-
         bg = GameObject.Find("TileMap_Background").gameObject.GetComponent<Tilemap>();
+        Debug.Log(bg);
 
-        lastPos = transform.position;
-        timeSinceLastReverse = timeInterval;
-        cellCenter = BMTiles.GetCellCenter(transform.position, bg);
-        possibleDirections = movement.findPossibleDirection();
-        if (possibleDirections.Count > 0)
-        {
-            newDirection = movement.pickDirection(possibleDirections);
-        }
-        possibleDirections.Clear();
-        movement.moveEnemy(cellCenter, newDirection, bg);
+//        cellCenter = BMTiles.GetCellCenter(transform.position, bg);
+//        startPosition = BMTiles.GetCellCenter(transform.position, bg);
+//        this.transform.position = startPosition;
+
+        newDirection = enemyMovement.changeDirection(cellCenter, bg);
     }
 
     void Update()
@@ -37,15 +32,8 @@ public class DenktunMovement : MonoBehaviour
         cellCenter = BMTiles.GetCellCenter(transform.position, bg);
         var displacement = transform.position - lastPos;
         lastPos = transform.position;
-        if (displacement.magnitude == 0)
-        {
-            possibleDirections = movement.findPossibleDirection();
-            if (possibleDirections.Count > 0)
-            {
-                newDirection = movement.pickDirection(possibleDirections);
-            }
-            possibleDirections.Clear();
-            movement.moveEnemy(cellCenter, newDirection, bg);
+        if (displacement.magnitude == 0) {
+            enemyMovement.moveEnemy(cellCenter, newDirection, bg);
         }
         else
         {
@@ -58,23 +46,39 @@ public class DenktunMovement : MonoBehaviour
                 int changeDirectionChance = Random.Range(0, 100);
                 if (changeDirectionChance > 75)
                 {
-                    newDirection = movement.reverseDirection(newDirection);
+                    newDirection = enemyMovement.reverseDirection(newDirection);
                 }
                 timeSinceLastReverse = timeInterval;
             }
-            movement.moveEnemy(cellCenter, newDirection, bg);
+            Debug.Log("Update Move Enemy");
+            enemyMovement.moveEnemy(cellCenter, newDirection, bg);
         }
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        possibleDirections = movement.findPossibleDirection();
-        if (possibleDirections.Count > 0)
+        if (collision.collider.tag == "Enemy")
         {
-            newDirection = movement.pickDirection(possibleDirections);
+            newDirection = enemyMovement.changeDirectionAndAvoidEnemyCollision(collision, cellCenter, bg);
+
         }
-        possibleDirections.Clear();
-        movement.moveEnemy(cellCenter, newDirection, bg);
+        else
+        {
+            newDirection = enemyMovement.changeDirection(cellCenter, bg);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("explosion"))
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

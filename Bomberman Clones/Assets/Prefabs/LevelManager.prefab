@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4484842096537541781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4484842096537541779}
+  - component: {fileID: 4484842096537541780}
+  - component: {fileID: 4484842096537541778}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4484842096537541779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4484842096537541781}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.68436265, y: 3.0514321, z: 1.3629186}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4484842096537541780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4484842096537541781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898cfb0996aab3848b86512196335452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySettings: {fileID: 4484842096537541778}
+  puropenPrefab: {fileID: 6650855784919436518, guid: 402df14dc3c6a804e9c2d7f69eed4d85,
+    type: 3}
+  maxNumberOfPuropens: 3
+  chanceOfPuropenSpawning: 0.05
+  starnutsPrefab: {fileID: 6526389610984840398, guid: 5028fa664a938224ab4f7d848fce7b93,
+    type: 3}
+  maxNumberOfStarNuts: 1
+  chanceOfStarNutsSpawning: 0.05
+  denktunPrefab: {fileID: 8949182503489064883, guid: d6c80d80421d9ae42a9662eb2e658da4,
+    type: 3}
+  maxNumberOfDenktun: 1
+  chanceOfDenktunSpawning: 0.05
+--- !u!114 &4484842096537541778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4484842096537541781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba32592ef463edb46b435b4ac1eee3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
+  maxEnemyCount: 0
+  chanceOfSpawningEnemy: 0

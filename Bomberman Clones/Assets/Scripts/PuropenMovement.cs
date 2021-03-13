@@ -16,10 +16,10 @@ public class PuropenMovement : MonoBehaviour
     {
         bg = GameObject.Find("TileMap_Background").gameObject.GetComponent<Tilemap>();
 
-        cellCenter = BMTiles.GetCellCenter(transform.position, bg);
-        startPosition = BMTiles.GetCellCenter(transform.position, bg);
-        startPosition.z = 1;
-        this.transform.position = startPosition;
+//        cellCenter = BMTiles.GetCellCenter(transform.position, bg);
+//        startPosition = BMTiles.GetCellCenter(transform.position, bg);
+//        startPosition.z = 1;
+//        this.transform.position = startPosition;
 
         newDirection = enemyMovement.changeDirection(cellCenter, bg);
     }

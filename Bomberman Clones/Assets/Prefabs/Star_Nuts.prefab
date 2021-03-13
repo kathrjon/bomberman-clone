@@ -137,11 +137,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellCenter: {x: 0, y: 0, z: 0}
-  movement: {fileID: 6526389610984840392}
+  enemyMovement: {fileID: 6526389610984840392}
+  startPosition: {x: 0, y: 0, z: 0}
+  bg: {fileID: 0}
   timeSinceLastReverse: 0
   timeInterval: 10
   newDirection: {x: 0, y: 0}
-  possibleDirections: []
 --- !u!114 &6526389610984840392
 MonoBehaviour:
   m_ObjectHideFlags: 0

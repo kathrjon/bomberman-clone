@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7266442421212423658}
   - component: {fileID: 7266442421212423669}
   - component: {fileID: 2695045996361118711}
-  - component: {fileID: 5470403802923284391}
   m_Layer: 9
   m_Name: Tilemap_Interactable
   m_TagString: interactive_tilemap
@@ -136,18 +135,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!114 &5470403802923284391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7266442421212423671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09d2c02ecfdbe534198aff2386790841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7266442421688372103
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,10 +299,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destructable_wall_tile: {fileID: 11400000, guid: c24e968945eb2764794e1c0f2e620db0,
     type: 2}
-  exit_tile: {fileID: 11400000, guid: f53664e859238654097e1dbf16474164, type: 2}
+  exitTilePrefab: {fileID: 5830508038750963356, guid: b896d639257e4a946907d0e395e55c33,
+    type: 3}
   destructable_tile_map: {fileID: 7266442421688371834}
   indestructable_tile_map: {fileID: 7266442423253984987}
   interactable_tile_map: {fileID: 7266442421212423658}
+  bg: {fileID: 0}
   player: {fileID: 0}
   fireUpPrefab: {fileID: 4451488421618100023, guid: f86c1232df45f444687a046f10771bfd,
     type: 3}
@@ -324,11 +313,6 @@ MonoBehaviour:
   bombUpPrefab: {fileID: 8467291333462981659, guid: 4c2e8f1b2bc122c4485afa9d1f37c269,
     type: 3}
   maxNumberOfPowerUps: 3
-  puropenPrefab: {fileID: 6650855784919436518, guid: 402df14dc3c6a804e9c2d7f69eed4d85,
-    type: 3}
-  puropenCount: 5
-  currentPuropenCount: 0
-  chance_of_spawning_puropen: 0.05
   number_of_destructable_walls: 100
   chance_of_spawning_wall: 0.25
   bm_starting_position: {x: 0, y: 0, z: 0}

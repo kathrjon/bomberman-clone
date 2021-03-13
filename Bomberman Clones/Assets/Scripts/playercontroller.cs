@@ -75,10 +75,6 @@ public class playercontroller : MonoBehaviour
             Destroy(col.gameObject);
         }
 
-        if (col.tag == "interactive_tilemap")
-        {
-            Debug.Log("Player is on door");
-        }
     }
 
     void movePlayer(float horizontalInput, float verticalInput, Vector3 cellCenter){

@@ -7,49 +7,33 @@ using BombermanTools;
 public class StarNutsMovement : MonoBehaviour
 {
     public Vector3 cellCenter;
-    [SerializeField] EnemyMovement movement;
-    private Tilemap bg;
+    [SerializeField] EnemyMovement enemyMovement;
+    public Vector3 startPosition;
+    [SerializeField] private Tilemap bg;
     [SerializeField] float timeSinceLastReverse;
     [SerializeField] float timeInterval = 10f;
     [SerializeField] private Vector2 newDirection;
-    [SerializeField] private List<Vector2> possibleDirections = new List<Vector2>();
     Vector3 lastPos;
 
     void Start()
     {
-
         bg = GameObject.Find("TileMap_Background").gameObject.GetComponent<Tilemap>();
 
-        lastPos = transform.position;
-        timeSinceLastReverse = timeInterval;
-        cellCenter = BMTiles.GetCellCenter(transform.position, bg);
-        Debug.Log("Start cellCenter " + cellCenter);
-        Debug.Log("Start transform.position " + transform.position);
-        possibleDirections = movement.findPossibleDirection();
-        if (possibleDirections.Count>0)
-        {
-            newDirection = movement.pickDirection(possibleDirections);
-        }
-        possibleDirections.Clear();
-        movement.moveEnemy(cellCenter, newDirection, bg);
+//        cellCenter = BMTiles.GetCellCenter(transform.position, bg);
+//        startPosition = BMTiles.GetCellCenter(transform.position, bg);
+//        this.transform.position = startPosition;
+
+        newDirection = enemyMovement.changeDirection(cellCenter, bg);
     }
 
     void Update()
     {
         cellCenter = BMTiles.GetCellCenter(transform.position, bg);
-        Debug.Log("Start cellCenter " + cellCenter);
-        Debug.Log("Start transform.position " + transform.position);
         var displacement = transform.position - lastPos;
         lastPos = transform.position;
         if (displacement.magnitude == 0)
         {
-            possibleDirections = movement.findPossibleDirection();
-            if (possibleDirections.Count > 0)
-            {
-                newDirection = movement.pickDirection(possibleDirections);
-            }
-            possibleDirections.Clear();
-            movement.moveEnemy(cellCenter, newDirection, bg);
+            enemyMovement.moveEnemy(cellCenter, newDirection, bg);
         }
         else
         {
@@ -62,24 +46,40 @@ public class StarNutsMovement : MonoBehaviour
                 int changeDirectionChance = Random.Range(0, 100);
                 if (changeDirectionChance > 75)
                 {
-                    newDirection = movement.reverseDirection(newDirection);
+                    newDirection = enemyMovement.reverseDirection(newDirection);
                 }
                 timeSinceLastReverse = timeInterval;
             }
-            movement.moveEnemy(cellCenter, newDirection, bg);
+            Debug.Log("Update Move Enemy");
+            enemyMovement.moveEnemy(cellCenter, newDirection, bg);
         }
 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        possibleDirections = movement.findPossibleDirection();
-        if (possibleDirections.Count > 0)
+        if (collision.collider.tag == "Enemy")
         {
-            newDirection = movement.pickDirection(possibleDirections);
+            newDirection = enemyMovement.changeDirectionAndAvoidEnemyCollision(collision, cellCenter, bg);
+
         }
-        possibleDirections.Clear();
-        movement.moveEnemy(cellCenter, newDirection, bg);
+        else
+        {
+            newDirection = enemyMovement.changeDirection(cellCenter, bg);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("explosion"))
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }
 
