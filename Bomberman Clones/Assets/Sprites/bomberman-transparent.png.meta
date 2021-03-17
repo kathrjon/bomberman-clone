@@ -1,7 +1,70 @@
 fileFormatVersion: 2
 guid: 5a9899f060a9c9e43bfeba7e9d4df373
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3559947527423337165
+    second: bomberman-transparent_0
+  - first:
+      213: -972236181603969530
+    second: bomberman-transparent_1
+  - first:
+      213: 1243542318379613065
+    second: bomberman-transparent_2
+  - first:
+      213: -7771593924655464152
+    second: bomberman-transparent_3
+  - first:
+      213: -6599663591330692923
+    second: bomberman-transparent_4
+  - first:
+      213: -2481771350338611880
+    second: bomberman-transparent_5
+  - first:
+      213: 2483226886633251064
+    second: bomberman-transparent_6
+  - first:
+      213: 6783337670120302451
+    second: bomberman-transparent_7
+  - first:
+      213: 6614557384400648632
+    second: bomberman-transparent_8
+  - first:
+      213: -6585412358900518519
+    second: bomberman-transparent_9
+  - first:
+      213: -8714690937198216486
+    second: bomberman-transparent_10
+  - first:
+      213: 6512099393163846470
+    second: bomberman-transparent_11
+  - first:
+      213: -4943124901489165230
+    second: bomberman-transparent_12
+  - first:
+      213: 2342385858963249323
+    second: bomberman-transparent_13
+  - first:
+      213: 5768724841674119155
+    second: bomberman-transparent_14
+  - first:
+      213: -4610711175751998615
+    second: bomberman-transparent_15
+  - first:
+      213: 6642988553085175639
+    second: bomberman-transparent_16
+  - first:
+      213: -6371695270714443117
+    second: bomberman-transparent_17
+  - first:
+      213: -8202221723229412042
+    second: bomberman-transparent_18
+  - first:
+      213: 3234604197197316294
+    second: bomberman-transparent_19
+  - first:
+      213: 4868047746301585777
+    second: bomberman-transparent_20
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +104,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +138,462 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bomberman-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 76
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33dd6e0d596889ec0800000000000000
+      internalID: -3559947527423337165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 76
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60696bd085ce182f0800000000000000
+      internalID: -972236181603969530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 76
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98bbe266623f14110800000000000000
+      internalID: 1243542318379613065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 76
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821c35e4080c52490800000000000000
+      internalID: -7771593924655464152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 76
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0c7a12ee84964a0800000000000000
+      internalID: -6599663591330692923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 76
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85553591b1afe8dd0800000000000000
+      internalID: -2481771350338611880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 51
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0697a52b1367220800000000000000
+      internalID: 2483226886633251064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 51
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377eb0bdba1432e50800000000000000
+      internalID: 6783337670120302451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 51
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b933ab45e0abcb50800000000000000
+      internalID: 6614557384400648632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 51
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9817440c95aeb94a0800000000000000
+      internalID: -6585412358900518519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 51
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adafbf8d3c23f0780800000000000000
+      internalID: -8714690937198216486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 51
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643619f35ef9f5a50800000000000000
+      internalID: 6512099393163846470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 26
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25cb956871e766bb0800000000000000
+      internalID: -4943124901489165230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 26
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba8176a3783d18020800000000000000
+      internalID: 2342385858963249323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 26
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f715f2fda0ae0050800000000000000
+      internalID: 5768724841674119155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 26
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963e06f3d967300c0800000000000000
+      internalID: -4610711175751998615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_16
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 26
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757c0a994e2a03c50800000000000000
+      internalID: 6642988553085175639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_17
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 26
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a7704f8e03397a0800000000000000
+      internalID: -6371695270714443117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6352be9cccadb2e80800000000000000
+      internalID: -8202221723229412042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c00fe2316f93ec20800000000000000
+      internalID: 3234604197197316294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bomberman-transparent_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1
+        width: 15.5
+        height: 24
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17962fb12a7ce8340800000000000000
+      internalID: 4868047746301585777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
