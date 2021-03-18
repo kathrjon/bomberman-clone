@@ -8,7 +8,7 @@ using GameStatsTools;
 
 public class playercontroller : MonoBehaviour
 {
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     public Vector3 startPosition;
     public Vector3 cellCenter;
     public playerStats stats;
@@ -37,6 +37,10 @@ public class playercontroller : MonoBehaviour
         cellCenter = BMTiles.GetCellCenter(transform.position, bg);
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+
+        Debug.Log("horizontalInput" + horizontalInput);
+        Debug.Log("verticalInput" + verticalInput);
+        Debug.Log("cellCenter" + cellCenter);
 
         if (Input.GetKeyDown(KeyCode.E)){
             if(GameObject.FindGameObjectsWithTag("Bomb").Length < stats.bombCount)
