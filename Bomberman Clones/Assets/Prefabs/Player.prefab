@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3340596450167065561}
   - component: {fileID: 6541416911175056700}
   - component: {fileID: 6554692623624665760}
+  - component: {fileID: 1152448718234416346}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526605b958c10c9418936e3c961efb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
   cellCenter: {x: 0, y: 0, z: 0}
   bomb: {fileID: 6002777961245302874, guid: e988a3b37c6591e4eb9895db54cff4c3, type: 3}
@@ -194,3 +196,19 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   bg: {fileID: 0}
   playerPrefab: {fileID: 5827665888429000634}
+--- !u!114 &1152448718234416346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5827665888429000634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313b3290f710eae48a0627d83799fdb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matDefault: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  matWhite: {fileID: 2100000, guid: 14d2de8e9edbe954085699f222c5bcce, type: 2}
+  spriteRenderer: {fileID: 5827665888429000635}
+  blinkTime: 60

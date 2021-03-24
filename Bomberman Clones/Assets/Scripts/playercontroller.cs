@@ -38,10 +38,6 @@ public class playercontroller : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
-        Debug.Log("horizontalInput" + horizontalInput);
-        Debug.Log("verticalInput" + verticalInput);
-        Debug.Log("cellCenter" + cellCenter);
-
         if (Input.GetKeyDown(KeyCode.E)){
             if(GameObject.FindGameObjectsWithTag("Bomb").Length < stats.bombCount)
             {
