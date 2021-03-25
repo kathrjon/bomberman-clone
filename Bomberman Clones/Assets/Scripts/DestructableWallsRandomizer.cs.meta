@@ -4,14 +4,17 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - destructable_wall_tile: {instanceID: 0}
-  - exit_tile: {instanceID: 0}
+  - exitTilePrefab: {instanceID: 0}
   - destructable_tile_map: {instanceID: 0}
   - indestructable_tile_map: {instanceID: 0}
   - interactable_tile_map: {instanceID: 0}
+  - bg: {instanceID: 0}
   - player: {fileID: 5827665888429000634, guid: e86cdaf46aebe9247aa3c6e73aa7e620,
       type: 3}
-  - puropenPrefab: {fileID: 6650855784919436518, guid: 402df14dc3c6a804e9c2d7f69eed4d85,
+  - fireUpPrefab: {instanceID: 0}
+  - speedUpPrefab: {instanceID: 0}
+  - bombUpPrefab: {instanceID: 0}
+  - wall_prefab: {fileID: 6593715871033756309, guid: 5e9afb2ed8034cc44837c1f0b6de2d6e,
       type: 3}
   executionOrder: 0
   icon: {instanceID: 0}

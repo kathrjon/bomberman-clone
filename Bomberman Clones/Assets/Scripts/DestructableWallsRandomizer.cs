@@ -9,7 +9,7 @@ using BombermanTools;
 public class DestructableWallsRandomizer : MonoBehaviour
 {
 
-    [SerializeField] Tile destructable_wall_tile;
+    // [SerializeField] Tile destructable_wall_tile;
     [SerializeField] GameObject exitTilePrefab;
     [SerializeField] Tilemap destructable_tile_map;
     [SerializeField] Tilemap indestructable_tile_map;
@@ -35,6 +35,8 @@ public class DestructableWallsRandomizer : MonoBehaviour
     private List<EnemySettings> enemiesToInstantiate = new List<EnemySettings>();
     private List<GameObject> powerUps;
 
+    [SerializeField] public GameObject wall_prefab;
+
     LevelManager levelSettings;
 
     void Start()
@@ -42,6 +44,23 @@ public class DestructableWallsRandomizer : MonoBehaviour
         player = GameObject.Find("Player(Clone)");
         powerUps = new List<GameObject> { fireUpPrefab, speedUpPrefab, bombUpPrefab };
         bg = GameObject.Find("TileMap_Background").gameObject.GetComponent<Tilemap>();
+
+        if(!this.wall_prefab) {
+            Debug.Log("Try resource load");
+            this.wall_prefab = (GameObject)Resources.Load("Lvl_1_breakable_wall");
+            if( this.wall_prefab == null) {
+                Debug.Log("Try gameobject load");
+                this.wall_prefab = GameObject.Find("Lvl_1_breakable_wall");
+                if(this.wall_prefab == null) {
+                    Debug.Log("Try tag load");
+                    this.wall_prefab = GameObject.FindGameObjectWithTag("Lvl_1_breakable_wall");
+                }
+            }
+        }
+
+
+
+
 
         //get script settings from level manager
         GameObject levelManager = GameObject.Find("LevelManager");
@@ -74,19 +93,28 @@ public class DestructableWallsRandomizer : MonoBehaviour
         }
     }
 
-    private void PlaceDestructableWall(Vector3Int tile_position)
+    private void PlaceDestructableWall(Vector3Int wall_position)
     {
         // Do nothing if tile spawn chance is greater than class property chance_of_spawning_wall,
-        // if number_of_destructable walls has been reached, or tile_position is the same as bombermans current tile.
+        // if number_of_destructable walls has been reached, or wall_position is the same as bombermans current tile.
         if (Random.Range(0f, 1f) > this.chance_of_spawning_wall) return;
         if (this.number_of_destructable_walls-- <= 0) return;
-        if (tile_position.x == this.bm_starting_position.x && tile_position.y == this.bm_starting_position.y) return;
+        if (wall_position.x == this.bm_starting_position.x && wall_position.y == this.bm_starting_position.y) return;
         foreach (GameObject enemy in enemies) {
-            if (tile_position.x == enemy.transform.position.x && tile_position.y == enemy.transform.position.y) return;
+            if (wall_position.x == enemy.transform.position.x && wall_position.y == enemy.transform.position.y) return;
         }
 
-        BMTiles.SetTile(tile_position, this.destructable_tile_map, this.destructable_wall_tile);
-        this.destructable_block_positions.Add(tile_position);
+        this.destructable_block_positions.Add(wall_position);
+
+        Vector3 centered_position = BMTiles.GetCellCenter(wall_position, this.destructable_tile_map);
+        centered_position.z = 1;
+        try {
+            Instantiate(this.wall_prefab, centered_position, Quaternion.identity);
+        } catch (System.Exception ex) {
+            Debug.Log("Couldn't place wall\r\n" + ex);
+        }
+
+        // BMTiles.SetTile(wall_position, this.destructable_tile_map, this.destructable_wall_tile);
     }
 
     private void FindBombermanSpawnPoint()
@@ -133,12 +161,12 @@ public class DestructableWallsRandomizer : MonoBehaviour
         }
     }
 
-   private void PlaceEnemy(Vector3Int tile_position, EnemySettings enemySetting){
+   private void PlaceEnemy(Vector3Int wall_position, EnemySettings enemySetting){
        if (Random.Range(0f, 1f) > enemySetting.chanceOfSpawningEnemy) return;
        if (this.number_of_destructable_walls-- <= 0) return;
-       if (tile_position.x == this.bm_starting_position.x && tile_position.y == this.bm_starting_position.y) return;
+       if (wall_position.x == this.bm_starting_position.x && wall_position.y == this.bm_starting_position.y) return;
        if (currentEnemyCount < enemySetting.maxEnemyCount){
-                Instantiate(enemySetting.enemyPrefab, tile_position, Quaternion.identity);
+                Instantiate(enemySetting.enemyPrefab, wall_position, Quaternion.identity);
                 currentEnemyCount++;
        }
    }
