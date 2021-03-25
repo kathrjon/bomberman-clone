@@ -8,7 +8,7 @@ using GameStatsTools;
 
 public class playercontroller : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
     public Vector3 startPosition;
     public Vector3 cellCenter;
     public playerStats stats;

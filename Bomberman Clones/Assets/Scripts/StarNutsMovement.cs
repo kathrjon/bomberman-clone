@@ -50,6 +50,7 @@ public class StarNutsMovement : MonoBehaviour
                 }
                 timeSinceLastReverse = timeInterval;
             }
+            // Debug.Log("Update Move Enemy");
             enemyMovement.moveEnemy(cellCenter, newDirection, bg);
         }
 

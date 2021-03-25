@@ -25,8 +25,7 @@ public class DestructableWallsRandomizer : MonoBehaviour
     [SerializeField] int maxNumberOfPowerUps;
 
     private int currentEnemyCount;
-    private List<GameObject> enemies = new List<GameObject>();
-//    private GameObject[] enemies;
+    private GameObject[] enemies;
 
     public int number_of_destructable_walls = 20;
     public float chance_of_spawning_wall = 0.25f;
@@ -69,14 +68,14 @@ public class DestructableWallsRandomizer : MonoBehaviour
         enemiesToInstantiate = levelSettings.allEnemySettings;
 
         this.FindBombermanSpawnPoint();
-        this.PlaceRandomDestructableBlocks();
-        for (var k = 0; k< enemiesToInstantiate.Count; k++)
+        for(var k = 0; k< enemiesToInstantiate.Count; k++)
         {
             currentEnemyCount = 0;
             this.PlaceEnemies(enemiesToInstantiate[k]);
         }
+        this.FindsEnemyTilePoints();
         this.CenterEnemies();
-        this.DisableSpaceCheckColliders();
+        this.PlaceRandomDestructableBlocks();
         this.PlaceExit();
         this.PlacePowerUps();
     }
@@ -147,28 +146,28 @@ public class DestructableWallsRandomizer : MonoBehaviour
         }
     }
 
+    private void FindsEnemyTilePoints()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
     private void PlaceEnemies(EnemySettings enemySetting) {
         foreach (Vector3Int pos in this.indestructable_tile_map.cellBounds.allPositionsWithin)
         {
-            if (!this.indestructable_tile_map.HasTile(pos) && !this.destructable_tile_map.HasTile(pos))
+            if (!this.indestructable_tile_map.HasTile(pos))
             {
                 PlaceEnemy(pos, enemySetting);
             }
         }
     }
 
-   private void PlaceEnemy(Vector3Int tile_position, EnemySettings enemySetting){
+   private void PlaceEnemy(Vector3Int wall_position, EnemySettings enemySetting){
        if (Random.Range(0f, 1f) > enemySetting.chanceOfSpawningEnemy) return;
-       if (tile_position.x == this.bm_starting_position.x && tile_position.y == this.bm_starting_position.y) return;
-       foreach (GameObject enemy in enemies)
-       {
-            CircleCollider2D spaceCheck = enemy.transform.Find("SpaceCheck").gameObject.GetComponent<CircleCollider2D>();
-            if (spaceCheck.bounds.Contains(tile_position)) return;
-       }
+       if (this.number_of_destructable_walls-- <= 0) return;
+       if (wall_position.x == this.bm_starting_position.x && wall_position.y == this.bm_starting_position.y) return;
        if (currentEnemyCount < enemySetting.maxEnemyCount){
-          GameObject enemy = Instantiate(enemySetting.enemyPrefab, tile_position, Quaternion.identity);
-          enemies.Add(enemy);
-          currentEnemyCount++;
+                Instantiate(enemySetting.enemyPrefab, wall_position, Quaternion.identity);
+                currentEnemyCount++;
        }
    }
 
@@ -178,15 +177,6 @@ public class DestructableWallsRandomizer : MonoBehaviour
         {
             Vector3 cellCenter = BMTiles.GetCellCenter(enemy.transform.position, bg);
             enemy.transform.position = cellCenter;
-        }
-    }
-
-    private void DisableSpaceCheckColliders()
-    {
-        foreach (GameObject enemy in enemies)
-        {
-            CircleCollider2D spaceCheck = enemy.transform.Find("SpaceCheck").gameObject.GetComponent<CircleCollider2D>();
-            spaceCheck.enabled = false;
         }
     }
 }

@@ -257,30 +257,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4484842096537541780, guid: cc1008c845d97c8448d2b9a9c6386bbc,
         type: 3}
-      propertyPath: maxNumberOfDenktun
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484842096537541780, guid: cc1008c845d97c8448d2b9a9c6386bbc,
-        type: 3}
       propertyPath: exitEnemySpawnPrefab
       value: 
       objectReference: {fileID: 6650855784919436518, guid: 402df14dc3c6a804e9c2d7f69eed4d85,
         type: 3}
-    - target: {fileID: 4484842096537541780, guid: cc1008c845d97c8448d2b9a9c6386bbc,
-        type: 3}
-      propertyPath: chanceOfDenktunSpawning
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484842096537541780, guid: cc1008c845d97c8448d2b9a9c6386bbc,
-        type: 3}
-      propertyPath: chanceOfPuropenSpawning
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4484842096537541780, guid: cc1008c845d97c8448d2b9a9c6386bbc,
-        type: 3}
-      propertyPath: chanceOfStarNutsSpawning
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 4484842096537541781, guid: cc1008c845d97c8448d2b9a9c6386bbc,
         type: 3}
       propertyPath: m_Name

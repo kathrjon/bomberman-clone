@@ -32,9 +32,7 @@ public class ExitBehavior : MonoBehaviour
                 timeSinceLastSpawn -= Time.deltaTime;
             } else
             {
-                GameObject enemy = Instantiate(exitLevelEnemyPrefab, transform.position, Quaternion.identity);
-                CircleCollider2D spaceCheck = enemy.transform.Find("SpaceCheck").gameObject.GetComponent<CircleCollider2D>();
-                spaceCheck.enabled = false;
+                Instantiate(exitLevelEnemyPrefab, transform.position, Quaternion.identity);
                 timeSinceLastSpawn = spawnRate;
             }
         }
