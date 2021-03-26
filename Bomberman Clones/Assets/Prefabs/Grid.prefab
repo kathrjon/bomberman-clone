@@ -297,8 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7e8c9f31c0d3d469a67a5cdcf11c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructable_wall_tile: {fileID: 11400000, guid: c24e968945eb2764794e1c0f2e620db0,
-    type: 2}
   exitTilePrefab: {fileID: 5830508038750963356, guid: b896d639257e4a946907d0e395e55c33,
     type: 3}
   destructable_tile_map: {fileID: 7266442421688371834}
@@ -316,6 +314,8 @@ MonoBehaviour:
   number_of_destructable_walls: 100
   chance_of_spawning_wall: 0.25
   bm_starting_position: {x: 0, y: 0, z: 0}
+  wall_prefab: {fileID: 6593715871033756309, guid: 5e9afb2ed8034cc44837c1f0b6de2d6e,
+    type: 3}
 --- !u!1 &7266442421727183815
 GameObject:
   m_ObjectHideFlags: 0
