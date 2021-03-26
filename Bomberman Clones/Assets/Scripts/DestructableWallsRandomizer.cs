@@ -45,18 +45,18 @@ public class DestructableWallsRandomizer : MonoBehaviour
         powerUps = new List<GameObject> { fireUpPrefab, speedUpPrefab, bombUpPrefab };
         bg = GameObject.Find("TileMap_Background").gameObject.GetComponent<Tilemap>();
 
-        if(!this.wall_prefab) {
-            Debug.Log("Try resource load");
-            this.wall_prefab = (GameObject)Resources.Load("Lvl_1_breakable_wall");
-            if( this.wall_prefab == null) {
-                Debug.Log("Try gameobject load");
-                this.wall_prefab = GameObject.Find("Lvl_1_breakable_wall");
-                if(this.wall_prefab == null) {
-                    Debug.Log("Try tag load");
-                    this.wall_prefab = GameObject.FindGameObjectWithTag("Lvl_1_breakable_wall");
-                }
-            }
-        }
+        // if(!this.wall_prefab) {
+        //     Debug.Log("Try resource load");
+        //     this.wall_prefab = (GameObject)Resources.Load("Lvl_1_breakable_wall");
+        //     if( this.wall_prefab == null) {
+        //         Debug.Log("Try gameobject load");
+        //         this.wall_prefab = GameObject.Find("Lvl_1_breakable_wall");
+        //         if(this.wall_prefab == null) {
+        //             Debug.Log("Try tag load");
+        //             this.wall_prefab = GameObject.FindGameObjectWithTag("Lvl_1_breakable_wall");
+        //         }
+        //     }
+        // }
 
 
 
